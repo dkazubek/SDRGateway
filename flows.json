@@ -1,0 +1,2011 @@
+[
+    {
+        "id": "059112ad3254c109",
+        "type": "tab",
+        "label": "SDRGateway",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef898a10171d903c",
+        "type": "tab",
+        "label": "System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a1aa31b58a4a031b",
+        "type": "mqtt-broker",
+        "name": "Ubuntu Broker",
+        "broker": "192.168.1.201",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "sensors/status",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "ONLINE",
+        "birthMsg": {},
+        "closeTopic": "sensors/status",
+        "closeQos": "1",
+        "closeRetain": "true",
+        "closePayload": "OFFLINE",
+        "closeMsg": {},
+        "willTopic": "sensors/status",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "DISCONNECTED",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "675b074160181062",
+        "type": "mqtt-broker",
+        "name": "UBUNTU TEST",
+        "broker": "192.168.0.40",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "sensors/status",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "ONLINE",
+        "birthMsg": {},
+        "closeTopic": "sensors/status",
+        "closeQos": "1",
+        "closeRetain": "true",
+        "closePayload": "OFFLINE",
+        "closeMsg": {},
+        "willTopic": "sensors/status",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "DISCONNECTED",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a538ea8f9b04237a",
+        "type": "mqtt-broker",
+        "name": "synology",
+        "broker": "192.168.1.187",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "sensors/status",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "ONLINE",
+        "birthMsg": {},
+        "closeTopic": "sensors/status",
+        "closeQos": "1",
+        "closeRetain": "true",
+        "closePayload": "OFFLINE",
+        "closeMsg": {},
+        "willTopic": "sensors/status",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "DISCONNECTED",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "47dc2bbd0a2ad331",
+        "type": "mqtt-broker",
+        "name": "Raspberry Pi B+",
+        "broker": "192.168.1.194",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b44d774a495ef1a0",
+        "type": "ui_tab",
+        "name": "SDRGateway",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "07587ed371d55c6a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2697174e2187d221",
+        "type": "ui_group",
+        "name": "System",
+        "tab": "b44d774a495ef1a0",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2631142d.86f8fc",
+        "type": "ui_group",
+        "name": "CPU",
+        "tab": "2248aa46.11d1c6",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "4a3f1d17.42abc4",
+        "type": "ui_group",
+        "name": "SD card",
+        "tab": "2248aa46.11d1c6",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "8e72d94d.e2b8c8",
+        "type": "ui_group",
+        "name": "Memory",
+        "tab": "2248aa46.11d1c6",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "c552b4f6.efaca8",
+        "type": "ui_group",
+        "name": "Buttons",
+        "tab": "2248aa46.11d1c6",
+        "order": 1,
+        "disp": false,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "2248aa46.11d1c6",
+        "type": "ui_tab",
+        "name": "System",
+        "icon": "settings",
+        "order": 2
+    },
+    {
+        "id": "1ac379cf6e608b5d",
+        "type": "rtl_433",
+        "z": "059112ad3254c109",
+        "name": "",
+        "device": "",
+        "frequency": "",
+        "protocols": "",
+        "flexgetter": "",
+        "expert": "-f 433.92M -H 60 -f 868M -H 20",
+        "supressChirp": true,
+        "x": 50,
+        "y": 120,
+        "wires": [
+            [
+                "06f8c20721e8af5c"
+            ]
+        ]
+    },
+    {
+        "id": "10a251886572d588",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Topic",
+        "func": "const payload = msg.payload;\nconst { location, category, model, id } = msg.payload;\nlet topic = `${location}/${category}`;\n\nif (model !== undefined && id !== undefined) {\n    topic = `${topic}/${model}/${id}`;\n}\n\nreturn {\n    topic: topic,\n    payload: payload\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1400,
+        "wires": [
+            [
+                "163244d9b414fa3c"
+            ]
+        ]
+    },
+    {
+        "id": "1fbd086a6c2db90d",
+        "type": "switch",
+        "z": "059112ad3254c109",
+        "name": "Switch On Telementry Type",
+        "property": "telemetryType",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "FREQUENCY_HOPPING",
+                "vt": "str"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 1320,
+        "wires": [
+            [
+                "986f357fc227bb5e"
+            ],
+            [
+                "b99e2388efc58a1e",
+                "29a9ed0b9ec683b8"
+            ]
+        ]
+    },
+    {
+        "id": "257bdbc2aa2f7b09",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Metadata to Payload",
+        "func": "const payload = msg.payload;\nconst knownSensors = [{\n        location: '1_Sayfield_Cottages/garden',\n        category: 'meteo',\n        model: 'LaCrosse-TX29IT',\n        id: 46,\n        send_every_sec: 60,\n        average_fields: [\"temperature_C\", \"humidity\"]\n    }, {\n        location: '1_Sayfield_Cottages',\n        category: 'electricity_usage',\n        model: 'CurrentCost-TX',\n        id: 77,\n        send_every_sec: 60,\n        average_fields: [\"power0_W\", \"power1_W\", \"power2_W\"]\n    }\n];\n\nconst knownSensor =\n    knownSensors.find(\n        sensor =>\n            sensor.model == payload.model &&\n            sensor.id == payload.id);\nconst isFrequencyHopping = !!payload['center_frequency'];\n\nif (!!knownSensor) {\n    msg.telemetryType = 'EXISTING_SENSOR';\n    msg.payload.location = knownSensor.location;\n    msg.payload.category = knownSensor.category;\n    msg.payload.send_every_sec = knownSensor.send_every_sec;\n    msg.payload.average_fields = [...knownSensor.average_fields];\n}\nelse if (isFrequencyHopping) {\n    msg.telemetryType = 'FREQUENCY_HOPPING'\n}\nelse {\n    msg.payload.location = '1_Sayfield_Cottages';\n    msg.payload.category = 'unrecognised';\n    msg.telemetryType = 'UNRECOGNISED';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 1240,
+        "wires": [
+            [
+                "1fbd086a6c2db90d"
+            ]
+        ]
+    },
+    {
+        "id": "986f357fc227bb5e",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "Log Frequency Hopping",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "b99e2388efc58a1e",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Apply Send Rate",
+        "func": "function diff_seconds(dt2, dt1) {\n    var diff = (dt2.getTime() - dt1.getTime()) / 1000;\n\n    return Math.abs(Math.round(diff));\n}\n\nconst reading = msg.payload;\n\n// if no rate limit just send it as is\nif (reading.send_every_sec === undefined) {\n    return msg;\n}\n\n// initialise cache\nconst cache = flow.get('cache') || {};\nconst sensorId = `${reading.model}_${reading.id}`;\n\ncache[sensorId] = cache[sensorId] || [];\n\n// If buffer is empty just add current to the array and quit\nif (!cache[sensorId].length) {\n    const readingToCache = { ...reading };\n    readingToCache.average_fields = [...reading.average_fields];\n\n    if (!readingToCache.average_fields) {\n        node.warn('NO AVERAGE FIELDS');\n\n        node.warn(msg.payload);\n    }\n\n    cache[sensorId].push(readingToCache);\n    flow.set('cache', cache);\n\n    node.warn(cache);\n\n    return null;\n}\n\n// check incoming reading difference with the first item in the array\nconst firstItem = cache[sensorId][0];\nconst differenceThreshold = reading.send_every_sec;\nconst differenceInSeconds =\n    diff_seconds(new Date(reading.time), new Date(firstItem.time));\n\n// If below send_every_sec value than add to the array and send null\nif (differenceInSeconds < differenceThreshold) {\n    const readingToCache = { ...reading };\n    readingToCache.average_fields = [...reading.average_fields];\n\n    if (!readingToCache.average_fields) {\n        node.warn('NO AVERAGE FIELDS');\n\n        node.warn(msg.payload);\n    }\n\n    cache[sensorId].push(readingToCache);\n    flow.set('cache', cache);\n    \n    node.warn(cache);\n\n    return null;\n}\n\n// otherwise create a reading with average from items in the array\nconst readingsLength = cache[sensorId].length;\nconst averageReading = {\n    ...cache[sensorId][readingsLength - 1]\n}\n\nif (!averageReading.average_fields) {\n    node.warn(averageReading);\n}\n\naverageReading.average_fields.forEach(field => {\n    let fieldSum = cache[sensorId].reduce((acc, curr) => {\n        return acc + curr[field];\n    }, 0);\n    const fieldAverage = fieldSum / readingsLength;\n\n    averageReading[field] = Math.round(fieldAverage * 10) / 10;\n});\n\n// clear the array\ncache[sensorId] = [];\n\n// add current reading to the array\nconst readingToCache = { ...reading };\nreadingToCache.average_fields = [...reading.average_fields];\n\ncache[sensorId].push(readingToCache);\n\n// send the previously created average reading on.\nmsg.payload = averageReading;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 1400,
+        "wires": [
+            [
+                "10a251886572d588"
+            ]
+        ]
+    },
+    {
+        "id": "163244d9b414fa3c",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Trim",
+        "func": "const reading = { ...msg.payload };\n\nreading.send_every_sec = undefined;\nreading.average_fields = undefined;\n\nmsg.payload = reading;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d69147c196a3742",
+        "type": "mqtt out",
+        "z": "059112ad3254c109",
+        "name": "synology-pub",
+        "topic": "",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a538ea8f9b04237a",
+        "x": 120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "97802fcf60af6be7",
+        "type": "mqtt in",
+        "z": "059112ad3254c109",
+        "name": "synology-sub",
+        "topic": "#",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "a538ea8f9b04237a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da8a4f8a5f8caf22",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "e43c11186b72eb8d",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Log Devices",
+        "func": "let devices = flow.get(\"devices\");\n\ndevices = devices || [];\n\nlet found = devices.find(device => device.topic == msg.topic);\n\nif (!!found) {\n    found.payload = msg.payload;\n} else {\n    devices.push({ topic: msg.topic, payload: msg.payload });\n}\n\nflow.set(\"devices\", devices);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1460,
+        "wires": [
+            [
+                "da8a4f8a5f8caf22"
+            ]
+        ]
+    },
+    {
+        "id": "eb8968d54ad014f2",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "Show Devices",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1580,
+        "wires": [
+            [
+                "4e6d9982e67fc8b5"
+            ]
+        ]
+    },
+    {
+        "id": "4e6d9982e67fc8b5",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Show Devices",
+        "func": "const devices = flow.get(\"devices\");\n\ndevices.sort((a, b) => {\n    if((!a && !a[0]) || (!b && !b[0])) {\n        return 0;\n    }\n\n    const payloadA = a.payload || a[0].payload;\n    const payloadB = b.payload || b[0].payload;\n\n    const timeA = payloadA.time;\n    const timeB = payloadB.time;\n    \n    if (timeA < timeB) {\n        return -1;\n    }\n\n    if (timeA > timeB) {\n        return 1;\n    }\n\n    return 0;\n});\n\nconst devicesThisMonth = devices.filter(d => getPayloadTime(d) > \"2024-09-01 00:00:00\");\nconst devicesCitroen = devices.filter(d => { const payload = getPayload(d); return payload.model && payload.model.includes(\"itro\"); });\nconst devicesTpms = devices.filter(d => { const payload = getPayload(d); return payload.type && payload.type.includes(\"TPMS\");});\nconst devicesOil = devices.filter(d => { const payload = getPayload(d); return payload.model && payload.model.includes(\"Oil\");});\n\n\nnode.warn(devices[devices.length - 1]);\n\n// return { payload: devicesCitroen };\n return { payload: devicesThisMonth };\n// return { payload: devicesTpms };\n // return { payload: devicesOil };\n\nfunction getPayloadTime(device) {\n    if (!device) {\n        return undefined;\n    }\n\n    const payload = device.payload || device[0].payload;\n\n    return payload.time;\n}\n\nfunction getPayload(device) {\n    if (!device) {\n        return undefined;\n    }\n\n    const payload = device.payload || device[0].payload;\n\n    return payload;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1580,
+        "wires": [
+            [
+                "7b4e3c0512b3e663"
+            ]
+        ]
+    },
+    {
+        "id": "7b4e3c0512b3e663",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "29a9ed0b9ec683b8",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "5170b63c369f9772",
+        "type": "file in",
+        "z": "059112ad3254c109",
+        "name": "Load Env Locations",
+        "filename": "/home/pi/.node-red/sensors-env.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 700,
+        "y": 20,
+        "wires": [
+            [
+                "f0aa1503f9f26294"
+            ]
+        ]
+    },
+    {
+        "id": "f0aa1503f9f26294",
+        "type": "json",
+        "z": "059112ad3254c109",
+        "name": "To Objects",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 60,
+        "wires": [
+            [
+                "56b04d6497f0877d"
+            ]
+        ]
+    },
+    {
+        "id": "56b04d6497f0877d",
+        "type": "change",
+        "z": "059112ad3254c109",
+        "name": "Set Env Locations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "envLocations",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06f8c20721e8af5c",
+        "type": "switch",
+        "z": "059112ad3254c109",
+        "name": "Sensor Type",
+        "property": "payload.model",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Fineoffset",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "undefined",
+                "vt": "jsonata"
+            },
+            {
+                "t": "cont",
+                "v": "Oregon-CM160",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "c61a41ed3df47d8e"
+            ],
+            [
+                "121c5217f0cd42cd"
+            ],
+            [
+                "edcd7c35e3f4edca"
+            ],
+            [
+                "928fc5493f8605f2"
+            ]
+        ]
+    },
+    {
+        "id": "c61a41ed3df47d8e",
+        "type": "switch",
+        "z": "059112ad3254c109",
+        "name": "Env Locations",
+        "property": "envLocations",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "undefined",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "5170b63c369f9772"
+            ],
+            [
+                "5108fe9d807fb967"
+            ]
+        ]
+    },
+    {
+        "id": "5108fe9d807fb967",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Location",
+        "func": "let envLocations = flow.get('envLocations') || [];\n\nif (!envLocations.length) {\n    return msg;\n}\n\nconst envLocation = envLocations.find(\n    l => l.id == msg.payload.id && l.model == msg.payload.model);\n\nif (!!envLocation) {\n    msg.payload.house = envLocation.house;\n    msg.payload.room = envLocation.room;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "ee36db2ab05ce599"
+            ]
+        ]
+    },
+    {
+        "id": "ee36db2ab05ce599",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Category",
+        "func": "msg.payload.category = 'meteo';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "681b221457e8d332"
+            ]
+        ]
+    },
+    {
+        "id": "f0a75955ebfa0d76",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Log Heartbeat",
+        "func": "let thermometers = flow.get('thermometers') || [];\nlet found = thermometers.find(t =>\n    t.id == msg.payload.id && t.model == msg.payload.model);\n\nif (!!found) {\n    found.lastLogged = new Date().toISOString();\n    found.payload = msg.payload;\n    found.totalHits++;\n} else {\n    found = {\n        id: msg.payload.id,\n        model: msg.payload.model,\n        room: msg.payload.room,\n        lastLogged: new Date().toISOString(),\n        totalHits: 1,\n        payload: msg.payload\n    }\n\n    thermometers.push(found);\n}\n\nflow.set('thermometers', thermometers);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "9d5ed20c75584622"
+            ]
+        ]
+    },
+    {
+        "id": "9d5ed20c75584622",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "Env Devices",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "98b0ebf490b8d232",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Latest Readings",
+        "func": "let readings = [];\nconst thermometers = flow.get('thermometers') || [];\n\nif (!thermometers.length) {\n    return msg;\n}\n\nfor (let t of thermometers) {\n    const sensor = t.payload;\n    // const reading = sensor;\n    const reading = {\n        id: sensor.id,\n        name: sensor.name,\n        model: sensor.model.replace(/\\//g, '_'),\n        last_logged: t.lastLogged,\n        tempc: sensor.temperature_C,\n        hum: sensor.humidity,\n        batt: sensor.battery_ok,\n        wind_dir_deg: sensor.wind_dir_deg,\n        wind_avg_m_s: sensor.wind_avg_m_s,\n        wind_max_m_s: sensor.wind_max_m_s,\n        rain_mm: sensor.rain_mm,\n        uv: sensor.uv,\n        uvi: sensor.uvi,\n        light_lux: sensor.light_lux,\n        pressure_hPa: sensor.pressure_hPa,\n        category: sensor.category,\n        house: sensor.house,\n        room: sensor.room\n    };\n    readings.push(reading);\n}\n\nmsg.payload = readings;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 1100,
+        "wires": [
+            [
+                "58a5be52a9ea82ef"
+            ]
+        ]
+    },
+    {
+        "id": "58a5be52a9ea82ef",
+        "type": "split",
+        "z": "059112ad3254c109",
+        "name": "Split Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 310,
+        "y": 1140,
+        "wires": [
+            [
+                "b775a868c5fa42fd"
+            ]
+        ]
+    },
+    {
+        "id": "b775a868c5fa42fd",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Topic",
+        "func": "const payload = msg.payload;\nconst { house, room, category, model, id } = msg.payload;\nlet topic = `${house}/${room}/${category}/${model}/${id}`;\n\nreturn {\n    topic: topic.replace(/ /g, '_'),\n    payload: payload\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1180,
+        "wires": [
+            [
+                "e6a5807d07252201"
+            ]
+        ]
+    },
+    {
+        "id": "ff2e00b0441fe45b",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "Send Readings",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1060,
+        "wires": [
+            [
+                "98b0ebf490b8d232"
+            ]
+        ]
+    },
+    {
+        "id": "e6a5807d07252201",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "3753f7397d086585",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 660,
+        "wires": [
+            [
+                "a63831bbb8278b96"
+            ]
+        ]
+    },
+    {
+        "id": "a63831bbb8278b96",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Thermometers",
+        "func": "const thermometers = flow.get('thermometers') || [];\n\nmsg.payload = thermometers;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 660,
+        "wires": [
+            [
+                "0bddbc93bd3278ac"
+            ]
+        ]
+    },
+    {
+        "id": "0bddbc93bd3278ac",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "13ee159656f6a0e8",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "bb31793609a31051"
+            ]
+        ]
+    },
+    {
+        "id": "bb31793609a31051",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Clear Thermometers",
+        "func": "flow.set('thermometers', []);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79d930d78eb61d44",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Log Device",
+        "func": "let devices = flow.get('devices') || {};\n\nif (!msg.payload.model) {\n    return msg;\n}\n\nlet model = msg.payload.model.replace(/ /g, '_') || '';\n\ndevices[model] = devices[model] || {};\n\nlet deviceModel = devices[model];\n\nif (!!deviceModel[msg.payload.id]) {\n    let deviceModelId = deviceModel[msg.payload.id];\n\n    deviceModelId.lastLogged = new Date().toISOString();\n    deviceModelId.payload = msg.payload;\n    deviceModelId.totalHits++;\n} else {\n    let deviceModelId = {\n        id: msg.payload.id,\n        model: msg.payload.model,\n        lastLogged: new Date().toISOString(),\n        totalHits: 1,\n        payload: msg.payload\n    }\n\n    deviceModel[msg.payload.id] = deviceModelId;\n}\n\nflow.set('devices', devices);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "93fbbd3d2a2ebbcf"
+            ]
+        ]
+    },
+    {
+        "id": "93fbbd3d2a2ebbcf",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 12",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 100,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "306eccadd4116b9e",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 780,
+        "wires": [
+            [
+                "83699c6419bced03"
+            ]
+        ]
+    },
+    {
+        "id": "83699c6419bced03",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Devices",
+        "func": "const devices = flow.get('devices') || {};\n\nmsg.payload = devices;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 780,
+        "wires": [
+            [
+                "8319b25d3b8a9bec"
+            ]
+        ]
+    },
+    {
+        "id": "8319b25d3b8a9bec",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "8154e67e3c5928be",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "Frequency Hopping",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a1a6f2e9d10c7e19",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Clear Devices",
+        "func": "flow.set('devices', {});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14604f26fa6ab2d8",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 960,
+        "wires": [
+            [
+                "a1a6f2e9d10c7e19"
+            ]
+        ]
+    },
+    {
+        "id": "4b328e121a459104",
+        "type": "file in",
+        "z": "059112ad3254c109",
+        "name": "Load Meter Locations",
+        "filename": "/home/pi/.node-red/meters.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "04e322da96938c34"
+            ]
+        ]
+    },
+    {
+        "id": "04e322da96938c34",
+        "type": "json",
+        "z": "059112ad3254c109",
+        "name": "To Objects",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 420,
+        "wires": [
+            [
+                "5d56aa7dc765f124"
+            ]
+        ]
+    },
+    {
+        "id": "5d56aa7dc765f124",
+        "type": "change",
+        "z": "059112ad3254c109",
+        "name": "Set Meters Locations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "meterLocations",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edcd7c35e3f4edca",
+        "type": "switch",
+        "z": "059112ad3254c109",
+        "name": "Meters Locations",
+        "property": "meterLocations",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "undefined",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "4b328e121a459104"
+            ],
+            [
+                "ee28581d63a82fd4"
+            ]
+        ]
+    },
+    {
+        "id": "e291c086cfc967a8",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 700,
+        "wires": [
+            [
+                "327bac6327afeff9"
+            ]
+        ]
+    },
+    {
+        "id": "327bac6327afeff9",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Meters",
+        "func": "const meters = flow.get('meters') || {};\n\nmsg.payload = meters;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 700,
+        "wires": [
+            [
+                "e41cbef9f4d10033"
+            ]
+        ]
+    },
+    {
+        "id": "e41cbef9f4d10033",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "6be3ee741c976104",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Clear Meters",
+        "func": "flow.set('meters', {});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abe14e8f237dd5a8",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 880,
+        "wires": [
+            [
+                "6be3ee741c976104"
+            ]
+        ]
+    },
+    {
+        "id": "ee28581d63a82fd4",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Location",
+        "func": "let meterLocations = flow.get('meterLocations') || [];\n\nif (!meterLocations.length) {\n    return msg;\n}\n\nconst meterLocation = meterLocations.find(\n    l => l.id == msg.payload.id && l.model == msg.payload.model);\n\nif (!!meterLocation) {\n    msg.payload.house = meterLocation.house;\n    msg.payload.room = meterLocation.room;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 520,
+        "wires": [
+            [
+                "95a9331c8f9eec7a"
+            ]
+        ]
+    },
+    {
+        "id": "95a9331c8f9eec7a",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Category",
+        "func": "msg.payload.category = 'energy';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "89e9319811b12907"
+            ]
+        ]
+    },
+    {
+        "id": "feaeec70efd105a6",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Log Heartbeat",
+        "func": "let meters = flow.get('meters') || [];\nlet found = meters.find(t =>\n    t.id == msg.payload.id && t.model == msg.payload.model);\n\nif (!!found) {\n    const now = new Date().toISOString();\n    const needsAvg = checkNeedsAvg(found.lastLogged, now);\n\n    if (found.avg_power_W && !needsAvg) {\n        const metersQueue = flow.get('metersQueue') || [];\n\n        metersQueue.push(JSON.parse(JSON.stringify(found)));\n        flow.set('metersQueue', metersQueue);\n    }\n\n    found.avg_power_W = needsAvg && found.avg_power_W\n        ? Math.ceil((found.avg_power_W + msg.payload.power_W) / 2)\n        : msg.payload.power_W;\n    found.lastLogged = now;\n    found.payload = msg.payload;\n    found.totalHits++;\n} else {\n    found = {\n        id: msg.payload.id,\n        model: msg.payload.model,\n        room: msg.payload.room,\n        lastLogged: new Date().toISOString(),\n        totalHits: 1,\n        avg_power_W: msg.payload.power_W,\n        payload: msg.payload\n    }\n\n    meters.push(found);\n}\n\nflow.set('meters', meters);\n\nreturn msg;\n\nfunction checkNeedsAvg(lastLogged, now) {\n    const lastDate = new Date(lastLogged);\n    const nowDate = new Date(now);\n\n    if (lastDate.getDate() == nowDate.getDate()) {\n        if (lastDate.getHours() == nowDate.getHours()) {\n            return lastDate.getMinutes() == nowDate.getMinutes();\n        }\n    }\n\n    return false;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 640,
+        "wires": [
+            [
+                "268ae285c254167c"
+            ]
+        ]
+    },
+    {
+        "id": "268ae285c254167c",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "Energy Devices",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6b7d9a35979b0ce9",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 740,
+        "wires": [
+            [
+                "95e2d7d24366b3c1"
+            ]
+        ]
+    },
+    {
+        "id": "95e2d7d24366b3c1",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Meters Queue",
+        "func": "const metersQueue = flow.get('metersQueue') || {};\n\nmsg.payload = metersQueue;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 740,
+        "wires": [
+            [
+                "eaa0dcefbc22bc20"
+            ]
+        ]
+    },
+    {
+        "id": "eaa0dcefbc22bc20",
+        "type": "debug",
+        "z": "059112ad3254c109",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "f9bf5dcc5d0a52b7",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Clear Meters Queue",
+        "func": "flow.set('metersQueue', {});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5501ee55a9117898",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 920,
+        "wires": [
+            [
+                "f9bf5dcc5d0a52b7"
+            ]
+        ]
+    },
+    {
+        "id": "c71b80902a6725e1",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "Send Reading",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "b5fbc1d347611fe4"
+            ]
+        ]
+    },
+    {
+        "id": "b5fbc1d347611fe4",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Meter Reading",
+        "func": "const meterQueue = flow.get('metersQueue') || [];\n\nif (!!meterQueue.length) {\n    const reading = meterQueue.shift();\n\n    msg.payload = {\n        model: reading.model,\n        id: reading.id,\n        avg_power_W: reading.avg_power_W,\n        lastLogged: reading.lastLogged,\n        house: reading.payload.house,\n        room: reading.room,\n        category: reading.payload.category\n    };\n} else {\n    msg.payload = undefined;\n}\n\nconst freq = flow.get('frequency');\n\nif (msg.payload && !!freq) {\n    msg.payload.frequency = freq;\n}\n\nflow.set('metersQueue', meterQueue);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "a433018dcf139501"
+            ]
+        ]
+    },
+    {
+        "id": "a433018dcf139501",
+        "type": "switch",
+        "z": "059112ad3254c109",
+        "name": "Ready To Send",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "0e53c270d078d4a5"
+            ]
+        ]
+    },
+    {
+        "id": "0e53c270d078d4a5",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Topic",
+        "func": "const payload = msg.payload;\nconst { house, room, category, model, id } = msg.payload;\nlet topic = `${house}/${room}/${category}/${model}/${id}`;\n\nreturn {\n    topic: topic.replace(/ /g, '_'),\n    payload: payload\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 100,
+        "y": 540,
+        "wires": [
+            [
+                "8d69147c196a3742"
+            ]
+        ]
+    },
+    {
+        "id": "f598a8e72bf30ce5",
+        "type": "inject",
+        "z": "059112ad3254c109",
+        "name": "Send Readings",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "c94d55ebb3d98043"
+            ]
+        ]
+    },
+    {
+        "id": "c94d55ebb3d98043",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Get Env. Readings",
+        "func": "let readings = [];\nconst thermometers = flow.get('thermometers') || [];\n\nif (!thermometers.length) {\n    return msg;\n}\n\nfor (let t of thermometers) {\n    const sensor = t.payload;\n    let reading = {\n        id: sensor.id,\n        model: sensor.model,\n        last_logged: t.lastLogged,\n        tempc: sensor.temperature_C,\n        hum: sensor.humidity,\n        battery_ok: sensor.battery_ok,\n        category: sensor.category,\n        house: sensor.house,\n        room: sensor.room\n    };\n\n    if (!!sensor.pressure_hPa) {\n        reading.pressure_hPa = sensor.pressure_hPa;\n    }\n\n    if (!!sensor.rain_mm ||\n        !!sensor.wind_avg_m_s ||\n        !!sensor.light_lux) {\n            \n        reading.wind_dir_deg = sensor.wind_dir_deg\n        reading.wind_avg_m_s = sensor.wind_avg_m_s;\n        reading.wind_max_m_s = sensor.wind_max_m_s;\n        reading.rain_mm = sensor.rain_mm;\n        reading.uv = sensor.uv;\n        reading.uvi = sensor.uvi;\n        reading.light_lux = sensor.light_lux;\n    }\n\n    if (!!sensor.frequency) {\n        reading.frequency = sensor.frequency;\n    }\n\n    readings.push(reading);\n}\n\nmsg.payload = readings;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "47d499b77bb172ea"
+            ]
+        ]
+    },
+    {
+        "id": "47d499b77bb172ea",
+        "type": "split",
+        "z": "059112ad3254c109",
+        "name": "Split Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 370,
+        "y": 500,
+        "wires": [
+            [
+                "b4c34bcc9dcf65ff"
+            ]
+        ]
+    },
+    {
+        "id": "b4c34bcc9dcf65ff",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Topic",
+        "func": "const payload = msg.payload;\nconst { house, room, category, model, id } = msg.payload;\nlet topic = `${house}/${room}/${category}/${model}/${id}`;\n\nreturn {\n    topic: topic.replace(/ /g, '_'),\n    payload: payload\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 540,
+        "wires": [
+            [
+                "b4290dfdcf7d96f0"
+            ]
+        ]
+    },
+    {
+        "id": "121c5217f0cd42cd",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Log Frequency",
+        "func": "let frequency = msg.payload.center_frequency / 1000000;\n\nfrequency = frequency.toFixed(3) + 'MHz';\n\nflow.set('frequency', frequency);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "8154e67e3c5928be"
+            ]
+        ]
+    },
+    {
+        "id": "89e9319811b12907",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Frequency",
+        "func": "const freq = flow.get('frequency');\n\nif (!!freq) {\n    msg.payload.frequency = freq;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 600,
+        "wires": [
+            [
+                "feaeec70efd105a6"
+            ]
+        ]
+    },
+    {
+        "id": "681b221457e8d332",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Frequency",
+        "func": "const freq = flow.get('frequency');\n\nif (!!freq) {\n    msg.payload.frequency = freq;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "f0a75955ebfa0d76"
+            ]
+        ]
+    },
+    {
+        "id": "928fc5493f8605f2",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Frequency",
+        "func": "const freq = flow.get('frequency');\n\nif (!!freq) {\n    msg.payload.frequency = freq;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "79d930d78eb61d44"
+            ]
+        ]
+    },
+    {
+        "id": "b4290dfdcf7d96f0",
+        "type": "mqtt out",
+        "z": "059112ad3254c109",
+        "name": "synology-pub",
+        "topic": "",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a538ea8f9b04237a",
+        "x": 380,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "b742bc8c86c5f775",
+        "type": "inject",
+        "z": "ef898a10171d903c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "e7207bbd21b9ae21",
+                "dfdfcb90d7181cd8"
+            ]
+        ]
+    },
+    {
+        "id": "e7207bbd21b9ae21",
+        "type": "exec",
+        "z": "ef898a10171d903c",
+        "command": "vcgencmd measure_temp",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "RPI CPU Temp",
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "28bc372a8bdedc62"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "53667d29028f60f0",
+        "type": "debug",
+        "z": "ef898a10171d903c",
+        "name": "debug 16",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "28bc372a8bdedc62",
+        "type": "change",
+        "z": "ef898a10171d903c",
+        "name": "Change to numerical",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "temp=",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "'C",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "53667d29028f60f0",
+                "0549a54115d71299"
+            ]
+        ]
+    },
+    {
+        "id": "0549a54115d71299",
+        "type": "ui_gauge",
+        "z": "ef898a10171d903c",
+        "name": "CPU Temp",
+        "group": "2697174e2187d221",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temp",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "dfdfcb90d7181cd8",
+        "type": "exec",
+        "z": "ef898a10171d903c",
+        "command": "top -d 0.5 -b -n2 | grep Cpu | tail -1 | awk '{print 100-$8}'",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "CPU Load",
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "129527593299b60a"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "129527593299b60a",
+        "type": "debug",
+        "z": "ef898a10171d903c",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 180,
+        "wires": []
+    }
+]
