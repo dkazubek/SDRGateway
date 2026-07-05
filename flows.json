@@ -1861,7 +1861,8 @@
         "wires": [
             [
                 "e7207bbd21b9ae21",
-                "dfdfcb90d7181cd8"
+                "dfdfcb90d7181cd8",
+                "cdccfe04e6338bac"
             ]
         ]
     },
@@ -2006,6 +2007,44 @@
         "statusType": "auto",
         "x": 480,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cdccfe04e6338bac",
+        "type": "exec",
+        "z": "ef898a10171d903c",
+        "command": "python3 /home/pi/.node-red/mem.py -u",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Memory Used",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "c87a69b15d3b0cf5"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c87a69b15d3b0cf5",
+        "type": "debug",
+        "z": "ef898a10171d903c",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 280,
         "wires": []
     }
 ]
