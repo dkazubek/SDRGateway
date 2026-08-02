@@ -764,7 +764,7 @@
         "y": 200,
         "wires": [
             [
-                "681b221457e8d332"
+                "f68539bd4f930359"
             ]
         ]
     },
@@ -780,7 +780,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "9d5ed20c75584622"
@@ -801,7 +801,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 670,
-        "y": 320,
+        "y": 360,
         "wires": []
     },
     {
@@ -1192,7 +1192,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 700,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "04e322da96938c34"
@@ -1208,7 +1208,7 @@
         "action": "",
         "pretty": false,
         "x": 670,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "5d56aa7dc765f124"
@@ -1235,7 +1235,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 460,
+        "y": 500,
         "wires": [
             []
         ]
@@ -1393,7 +1393,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 520,
+        "y": 560,
         "wires": [
             [
                 "95a9331c8f9eec7a"
@@ -1412,10 +1412,10 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
-                "89e9319811b12907"
+                "673cae95a31744c3"
             ]
         ]
     },
@@ -1431,7 +1431,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "268ae285c254167c"
@@ -1452,7 +1452,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 680,
+        "y": 760,
         "wires": []
     },
     {
@@ -1599,7 +1599,7 @@
         "type": "function",
         "z": "059112ad3254c109",
         "name": "Get Meter Reading",
-        "func": "const meterQueue = flow.get('metersQueue') || [];\n\nif (!!meterQueue.length) {\n    const reading = meterQueue.shift();\n\n    msg.payload = {\n        model: reading.model,\n        id: reading.id,\n        avg_power_W: reading.avg_power_W,\n        lastLogged: reading.lastLogged,\n        house: reading.payload.house,\n        room: reading.room,\n        category: reading.payload.category\n    };\n} else {\n    msg.payload = undefined;\n}\n\nconst freq = flow.get('frequency');\n\nif (msg.payload && !!freq) {\n    msg.payload.frequency = freq;\n}\n\nflow.set('metersQueue', meterQueue);\n\nreturn msg;",
+        "func": "const meterQueue = flow.get('metersQueue') || [];\n\nif (!!meterQueue.length) {\n    const reading = meterQueue.shift();\n\n    msg.payload = {\n        model: reading.model,\n        id: reading.id,\n        avg_power_W: reading.avg_power_W,\n        lastLogged: reading.lastLogged,\n        house: reading.payload.house,\n        room: reading.room,\n        category: reading.payload.category,\n        type: reading.payload.type\n    };\n} else {\n    msg.payload = undefined;\n}\n\nconst freq = flow.get('frequency');\n\nif (msg.payload && !!freq) {\n    msg.payload.frequency = freq;\n}\n\nflow.set('metersQueue', meterQueue);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1689,7 +1689,7 @@
         "type": "function",
         "z": "059112ad3254c109",
         "name": "Get Env. Readings",
-        "func": "let readings = [];\nconst thermometers = flow.get('thermometers') || [];\n\nif (!thermometers.length) {\n    return msg;\n}\n\nfor (let t of thermometers) {\n    const sensor = t.payload;\n    let reading = {\n        id: sensor.id,\n        model: sensor.model,\n        last_logged: t.lastLogged,\n        tempc: sensor.temperature_C,\n        hum: sensor.humidity,\n        battery_ok: sensor.battery_ok,\n        category: sensor.category,\n        house: sensor.house,\n        room: sensor.room\n    };\n\n    if (!!sensor.pressure_hPa) {\n        reading.pressure_hPa = sensor.pressure_hPa;\n    }\n\n    if (!!sensor.rain_mm ||\n        !!sensor.wind_avg_m_s ||\n        !!sensor.light_lux) {\n            \n        reading.wind_dir_deg = sensor.wind_dir_deg\n        reading.wind_avg_m_s = sensor.wind_avg_m_s;\n        reading.wind_max_m_s = sensor.wind_max_m_s;\n        reading.rain_mm = sensor.rain_mm;\n        reading.uv = sensor.uv;\n        reading.uvi = sensor.uvi;\n        reading.light_lux = sensor.light_lux;\n    }\n\n    if (!!sensor.frequency) {\n        reading.frequency = sensor.frequency;\n    }\n\n    readings.push(reading);\n}\n\nmsg.payload = readings;\n\nreturn msg;",
+        "func": "let readings = [];\nconst thermometers = flow.get('thermometers') || [];\n\nif (!thermometers.length) {\n    return msg;\n}\n\nfor (let t of thermometers) {\n    const sensor = t.payload;\n    let reading = {\n        id: sensor.id,\n        model: sensor.model,\n        last_logged: t.lastLogged,\n        tempc: sensor.temperature_C,\n        hum: sensor.humidity,\n        battery_ok: sensor.battery_ok,\n        category: sensor.category,\n        house: sensor.house,\n        room: sensor.room,\n        type: sensor.type\n    };\n\n    if (!!sensor.pressure_hPa) {\n        reading.pressure_hPa = sensor.pressure_hPa;\n    }\n\n    if (!!sensor.rain_mm ||\n        !!sensor.wind_avg_m_s ||\n        !!sensor.light_lux) {\n            \n        reading.wind_dir_deg = sensor.wind_dir_deg\n        reading.wind_avg_m_s = sensor.wind_avg_m_s;\n        reading.wind_max_m_s = sensor.wind_max_m_s;\n        reading.rain_mm = sensor.rain_mm;\n        reading.uv = sensor.uv;\n        reading.uvi = sensor.uvi;\n        reading.light_lux = sensor.light_lux;\n    }\n\n    if (!!sensor.frequency) {\n        reading.frequency = sensor.frequency;\n    }\n\n    readings.push(reading);\n}\n\nmsg.payload = readings;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1772,7 +1772,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 600,
+        "y": 680,
         "wires": [
             [
                 "feaeec70efd105a6"
@@ -1791,7 +1791,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
                 "f0a75955ebfa0d76"
@@ -1834,6 +1834,44 @@
         "x": 380,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "f68539bd4f930359",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Sensor Type",
+        "func": "msg.payload.type = 'weather_station';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "681b221457e8d332"
+            ]
+        ]
+    },
+    {
+        "id": "673cae95a31744c3",
+        "type": "function",
+        "z": "059112ad3254c109",
+        "name": "Add Sensor Type",
+        "func": "msg.payload.sensor_type = 'power_meter';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 640,
+        "wires": [
+            [
+                "89e9319811b12907"
+            ]
+        ]
     },
     {
         "id": "b742bc8c86c5f775",
