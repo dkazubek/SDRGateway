@@ -2,6 +2,7 @@
 
 ## System Architecture
 
+```mermaid
 graph TD
     subgraph Sensors [Field Layer]
         WS[Weather Station Sensors<br/>433.92 MHz RF]
@@ -39,6 +40,7 @@ graph TD
     style NR fill:#fbb,stroke:#333,stroke-width:2px
     style MQ fill:#bfb,stroke:#333,stroke-width:2px
     style AZ fill:#fffbbf,stroke:#333,stroke-width:2px
+```
 
 ### Data Pipeline & Architecture Layers
 
