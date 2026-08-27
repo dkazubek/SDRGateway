@@ -5,7 +5,7 @@
 ```mermaid
 graph TD
     subgraph Sensors [Field Layer]
-        WS[Weather Station Sensors<br/>433.92 MHz RF]
+        WS[Weather Station Sensors<br/>433.92/868 MHz RF]
     end
 
     subgraph Edge_Gateway [Raspberry Pi 3A+ Gateway Layer]
@@ -34,18 +34,21 @@ graph TD
     NR -- "MQTT (Port 1883)" --> MQ
     NR -- "MQTT over TLS (Port 8883)" --> AZ
 
-    %% Styling
-    style WS fill:#f9f,stroke:#333,stroke-width:2px
-    style SDR fill:#bbf,stroke:#333,stroke-width:2px
-    style NR fill:#fbb,stroke:#333,stroke-width:2px
-    style MQ fill:#bfb,stroke:#333,stroke-width:2px
-    style AZ fill:#fffbbf,stroke:#333,stroke-width:2px
+    %% High-Contrast Styling Realignment
+    style WS fill:#ff66cc,stroke:#222,stroke-width:2px,color:#000000
+    style SDR fill:#99ccff,stroke:#222,stroke-width:2px,color:#000000
+    style RTL fill:#333333,stroke:#ccc,stroke-width:2px,color:#ffffff
+    style NR fill:#ff9999,stroke:#222,stroke-width:2px,color:#000000
+    style NAS fill:#444444,stroke:#ccc,stroke-width:1px,color:#ffffff
+    style MQ fill:#99ff99,stroke:#222,stroke-width:2px,color:#000000
+    style AZ fill:#ffff99,stroke:#222,stroke-width:2px,color:#000000
+
 ```
 
 ### Data Pipeline & Architecture Layers
 
 1. **Physical / RF Layer:** Wireless outdoor weather sensors broadcast raw radio frequencies.
-2. **SDR Hardware Ingestion:** An RTL-SDR USB dongle attached to the Raspberry Pi 3A+ intercepts the 433MHz signals.
+2. **SDR Hardware Ingestion:** An RTL-SDR USB dongle attached to the Raspberry Pi 3A+ intercepts the 433/868MHz signals.
 3. **Demodulation Layer:** The `rtl_433` tool runs on Raspberry Pi OS, decoding the radio signals into structured JSON data.
 4. **Edge Orchestration:** Node-RED ingests the JSON payload, parses the telemetry, and splits the data stream into two pathways:
    * **Local Storage:** Dispatched to a containerised Eclipse Mosquitto broker on a Synology NAS via MQTT.
