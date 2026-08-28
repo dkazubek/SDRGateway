@@ -1,5 +1,10 @@
 # SDRGateway
 
+<p align="center">
+  <img src="images/raspberry-pi-3ap.jpeg" alt="My Raspberry Pi" width="600"><br>
+  <em>Figure 1: My Raspberry Pi 3A+ setup running headless.</em>
+</p>
+
 ## System Architecture
 
 ```mermaid
