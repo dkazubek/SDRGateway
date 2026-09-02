@@ -5,7 +5,18 @@
         "label": "SDRGateway",
         "disabled": false,
         "info": "",
-        "env": []
+        "env": [
+            {
+                "name": "ENV_SENSOR_CONFIG",
+                "value": "/home/pi/.node-red/sensors-env.json",
+                "type": "str"
+            },
+            {
+                "name": "METER_CONFIG",
+                "value": "/home/pi/.node-red/meters.json",
+                "type": "str"
+            }
+        ]
     },
     {
         "id": "ef898a10171d903c",
@@ -13,67 +24,13 @@
         "label": "System",
         "disabled": false,
         "info": "",
-        "env": []
-    },
-    {
-        "id": "a1aa31b58a4a031b",
-        "type": "mqtt-broker",
-        "name": "Ubuntu Broker",
-        "broker": "192.168.1.201",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "sensors/status",
-        "birthQos": "1",
-        "birthRetain": "true",
-        "birthPayload": "ONLINE",
-        "birthMsg": {},
-        "closeTopic": "sensors/status",
-        "closeQos": "1",
-        "closeRetain": "true",
-        "closePayload": "OFFLINE",
-        "closeMsg": {},
-        "willTopic": "sensors/status",
-        "willQos": "1",
-        "willRetain": "true",
-        "willPayload": "DISCONNECTED",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "675b074160181062",
-        "type": "mqtt-broker",
-        "name": "UBUNTU TEST",
-        "broker": "192.168.0.40",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "sensors/status",
-        "birthQos": "1",
-        "birthRetain": "true",
-        "birthPayload": "ONLINE",
-        "birthMsg": {},
-        "closeTopic": "sensors/status",
-        "closeQos": "1",
-        "closeRetain": "true",
-        "closePayload": "OFFLINE",
-        "closeMsg": {},
-        "willTopic": "sensors/status",
-        "willQos": "1",
-        "willRetain": "true",
-        "willPayload": "DISCONNECTED",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
+        "env": [
+            {
+                "name": "MEMORY_USAGE_COMMAND",
+                "value": "python3 /home/pi/.node-red/mem.py -u",
+                "type": "str"
+            }
+        ]
     },
     {
         "id": "a538ea8f9b04237a",
@@ -101,33 +58,6 @@
         "willQos": "1",
         "willRetain": "true",
         "willPayload": "DISCONNECTED",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "47dc2bbd0a2ad331",
-        "type": "mqtt-broker",
-        "name": "Raspberry Pi B+",
-        "broker": "192.168.1.194",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
@@ -315,129 +245,6 @@
         ]
     },
     {
-        "id": "10a251886572d588",
-        "type": "function",
-        "z": "059112ad3254c109",
-        "name": "Add Topic",
-        "func": "const payload = msg.payload;\nconst { location, category, model, id } = msg.payload;\nlet topic = `${location}/${category}`;\n\nif (model !== undefined && id !== undefined) {\n    topic = `${topic}/${model}/${id}`;\n}\n\nreturn {\n    topic: topic,\n    payload: payload\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 1400,
-        "wires": [
-            [
-                "163244d9b414fa3c"
-            ]
-        ]
-    },
-    {
-        "id": "1fbd086a6c2db90d",
-        "type": "switch",
-        "z": "059112ad3254c109",
-        "name": "Switch On Telementry Type",
-        "property": "telemetryType",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "FREQUENCY_HOPPING",
-                "vt": "str"
-            },
-            {
-                "t": "nnull"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 180,
-        "y": 1320,
-        "wires": [
-            [
-                "986f357fc227bb5e"
-            ],
-            [
-                "b99e2388efc58a1e",
-                "29a9ed0b9ec683b8"
-            ]
-        ]
-    },
-    {
-        "id": "257bdbc2aa2f7b09",
-        "type": "function",
-        "z": "059112ad3254c109",
-        "name": "Add Metadata to Payload",
-        "func": "const payload = msg.payload;\nconst knownSensors = [{\n        location: '1_Sayfield_Cottages/garden',\n        category: 'meteo',\n        model: 'LaCrosse-TX29IT',\n        id: 46,\n        send_every_sec: 60,\n        average_fields: [\"temperature_C\", \"humidity\"]\n    }, {\n        location: '1_Sayfield_Cottages',\n        category: 'electricity_usage',\n        model: 'CurrentCost-TX',\n        id: 77,\n        send_every_sec: 60,\n        average_fields: [\"power0_W\", \"power1_W\", \"power2_W\"]\n    }\n];\n\nconst knownSensor =\n    knownSensors.find(\n        sensor =>\n            sensor.model == payload.model &&\n            sensor.id == payload.id);\nconst isFrequencyHopping = !!payload['center_frequency'];\n\nif (!!knownSensor) {\n    msg.telemetryType = 'EXISTING_SENSOR';\n    msg.payload.location = knownSensor.location;\n    msg.payload.category = knownSensor.category;\n    msg.payload.send_every_sec = knownSensor.send_every_sec;\n    msg.payload.average_fields = [...knownSensor.average_fields];\n}\nelse if (isFrequencyHopping) {\n    msg.telemetryType = 'FREQUENCY_HOPPING'\n}\nelse {\n    msg.payload.location = '1_Sayfield_Cottages';\n    msg.payload.category = 'unrecognised';\n    msg.telemetryType = 'UNRECOGNISED';\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 170,
-        "y": 1240,
-        "wires": [
-            [
-                "1fbd086a6c2db90d"
-            ]
-        ]
-    },
-    {
-        "id": "986f357fc227bb5e",
-        "type": "debug",
-        "z": "059112ad3254c109",
-        "name": "Log Frequency Hopping",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 490,
-        "y": 1300,
-        "wires": []
-    },
-    {
-        "id": "b99e2388efc58a1e",
-        "type": "function",
-        "z": "059112ad3254c109",
-        "name": "Apply Send Rate",
-        "func": "function diff_seconds(dt2, dt1) {\n    var diff = (dt2.getTime() - dt1.getTime()) / 1000;\n\n    return Math.abs(Math.round(diff));\n}\n\nconst reading = msg.payload;\n\n// if no rate limit just send it as is\nif (reading.send_every_sec === undefined) {\n    return msg;\n}\n\n// initialise cache\nconst cache = flow.get('cache') || {};\nconst sensorId = `${reading.model}_${reading.id}`;\n\ncache[sensorId] = cache[sensorId] || [];\n\n// If buffer is empty just add current to the array and quit\nif (!cache[sensorId].length) {\n    const readingToCache = { ...reading };\n    readingToCache.average_fields = [...reading.average_fields];\n\n    if (!readingToCache.average_fields) {\n        node.warn('NO AVERAGE FIELDS');\n\n        node.warn(msg.payload);\n    }\n\n    cache[sensorId].push(readingToCache);\n    flow.set('cache', cache);\n\n    node.warn(cache);\n\n    return null;\n}\n\n// check incoming reading difference with the first item in the array\nconst firstItem = cache[sensorId][0];\nconst differenceThreshold = reading.send_every_sec;\nconst differenceInSeconds =\n    diff_seconds(new Date(reading.time), new Date(firstItem.time));\n\n// If below send_every_sec value than add to the array and send null\nif (differenceInSeconds < differenceThreshold) {\n    const readingToCache = { ...reading };\n    readingToCache.average_fields = [...reading.average_fields];\n\n    if (!readingToCache.average_fields) {\n        node.warn('NO AVERAGE FIELDS');\n\n        node.warn(msg.payload);\n    }\n\n    cache[sensorId].push(readingToCache);\n    flow.set('cache', cache);\n    \n    node.warn(cache);\n\n    return null;\n}\n\n// otherwise create a reading with average from items in the array\nconst readingsLength = cache[sensorId].length;\nconst averageReading = {\n    ...cache[sensorId][readingsLength - 1]\n}\n\nif (!averageReading.average_fields) {\n    node.warn(averageReading);\n}\n\naverageReading.average_fields.forEach(field => {\n    let fieldSum = cache[sensorId].reduce((acc, curr) => {\n        return acc + curr[field];\n    }, 0);\n    const fieldAverage = fieldSum / readingsLength;\n\n    averageReading[field] = Math.round(fieldAverage * 10) / 10;\n});\n\n// clear the array\ncache[sensorId] = [];\n\n// add current reading to the array\nconst readingToCache = { ...reading };\nreadingToCache.average_fields = [...reading.average_fields];\n\ncache[sensorId].push(readingToCache);\n\n// send the previously created average reading on.\nmsg.payload = averageReading;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 150,
-        "y": 1400,
-        "wires": [
-            [
-                "10a251886572d588"
-            ]
-        ]
-    },
-    {
-        "id": "163244d9b414fa3c",
-        "type": "function",
-        "z": "059112ad3254c109",
-        "name": "Trim",
-        "func": "const reading = { ...msg.payload };\n\nreading.send_every_sec = undefined;\nreading.average_fields = undefined;\n\nmsg.payload = reading;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 1400,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "8d69147c196a3742",
         "type": "mqtt out",
         "z": "059112ad3254c109",
@@ -454,61 +261,6 @@
         "x": 120,
         "y": 580,
         "wires": []
-    },
-    {
-        "id": "97802fcf60af6be7",
-        "type": "mqtt in",
-        "z": "059112ad3254c109",
-        "name": "synology-sub",
-        "topic": "#",
-        "qos": "1",
-        "datatype": "auto-detect",
-        "broker": "a538ea8f9b04237a",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 130,
-        "y": 1460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "da8a4f8a5f8caf22",
-        "type": "debug",
-        "z": "059112ad3254c109",
-        "name": "debug 4",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 1460,
-        "wires": []
-    },
-    {
-        "id": "e43c11186b72eb8d",
-        "type": "function",
-        "z": "059112ad3254c109",
-        "name": "Log Devices",
-        "func": "let devices = flow.get(\"devices\");\n\ndevices = devices || [];\n\nlet found = devices.find(device => device.topic == msg.topic);\n\nif (!!found) {\n    found.payload = msg.payload;\n} else {\n    devices.push({ topic: msg.topic, payload: msg.payload });\n}\n\nflow.set(\"devices\", devices);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 1460,
-        "wires": [
-            [
-                "da8a4f8a5f8caf22"
-            ]
-        ]
     },
     {
         "id": "eb8968d54ad014f2",
@@ -531,8 +283,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 1580,
+        "x": 110,
+        "y": 1240,
         "wires": [
             [
                 "4e6d9982e67fc8b5"
@@ -550,8 +302,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1580,
+        "x": 300,
+        "y": 1240,
         "wires": [
             [
                 "7b4e3c0512b3e663"
@@ -571,24 +323,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 1580,
-        "wires": []
-    },
-    {
-        "id": "29a9ed0b9ec683b8",
-        "type": "debug",
-        "z": "059112ad3254c109",
-        "name": "debug 6",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 1340,
+        "x": 480,
+        "y": 1240,
         "wires": []
     },
     {
@@ -596,7 +332,7 @@
         "type": "file in",
         "z": "059112ad3254c109",
         "name": "Load Env Locations",
-        "filename": "/home/pi/.node-red/sensors-env.json",
+        "filename": "${ENV_SENSOR_CONFIG}",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -1184,7 +920,7 @@
         "type": "file in",
         "z": "059112ad3254c109",
         "name": "Load Meter Locations",
-        "filename": "/home/pi/.node-red/meters.json",
+        "filename": "${METER_CONFIG}",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -2082,7 +1818,7 @@
         "id": "cdccfe04e6338bac",
         "type": "exec",
         "z": "ef898a10171d903c",
-        "command": "python3 /home/pi/.node-red/mem.py -u",
+        "command": "${MEMORY_USAGE_COMMAND}",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
