@@ -1,8 +1,10 @@
 # SDRGateway
 
+**SDRGateway** is an edge data collector running on a headless Raspberry Pi 3A+ (figure 1). It collects and decodes 433MHz/868MHz ISM telemetry data from a weather station and energy meters, enriches it with metadata and publishes MQTT messages to the central broker. It uses [rtl_433](https://github.com/merbanan/rtl_433) which decodes traffic broadcasted by 433MHz/868MHz devices and collected via SDR dongle attached to the Raspberry Pi. The program is accessed by a Node-RED node [node-red-contrib-rtl_433](https://github.com/dayne/node-red-contrib-rtl_433/blob/master/README.md) which sends the JSON formatted messages to the Node-RED flow for filtering, formating and enriching with metadata before it is being sent in a form of MQTT messages to the central broker.
+
 <p align="center">
   <img src="images/raspberry-pi-3ap.jpeg" alt="My Raspberry Pi" width="600"><br>
-  <em>Figure 1: My Raspberry Pi 3A+ setup running headless.</em>
+  <em>Figure 1: Raspberry Pi 3A+ setup running headless.</em>
 </p>
 
 ## System Architecture
@@ -31,13 +33,13 @@ graph TD
         NAS --- Docker_Engine
     end
 
-    subgraph Cloud_Storage [Cloud Infrastructure]
+    subgraph Cloud_Storage [Cloud Infrastructure</br>**Planned Azure extension**]
         AZ[Azure IoT Hub]
     end
 
     %% Data Pipeline Paths
     NR -- "MQTT (Port 1883)" --> MQ
-    NR -- "MQTT over TLS (Port 8883)" --> AZ
+    NR -. "Planned: MQTT over TLS (Port 8883)" .-> AZ
 
     %% High-Contrast Styling Realignment
     style WS fill:#ff66cc,stroke:#222,stroke-width:2px,color:#000000
@@ -49,13 +51,36 @@ graph TD
     style AZ fill:#ffff99,stroke:#222,stroke-width:2px,color:#000000
 
 ```
+<em>Figure 2: System Architecture.</em>
 
 ### Data Pipeline & Architecture Layers
 
 1. **Physical / RF Layer:** Wireless outdoor weather sensors broadcast raw radio frequencies.
-2. **SDR Hardware Ingestion:** An RTL-SDR USB dongle attached to the Raspberry Pi 3A+ intercepts the 433/868MHz signals.
-3. **Demodulation Layer:** The `rtl_433` tool runs on Raspberry Pi OS, decoding the radio signals into structured JSON data.
+2. **SDR Hardware Ingestion:** An RTL-SDR USB dongle attached to the Raspberry Pi 3A+ intercepts the 433MHz/868MHz signals.
+3. **Demodulation Layer:** The [rtl_433](https://github.com/merbanan/rtl_433) tool runs on Raspberry Pi OS, decoding the radio signals into structured JSON data.
 4. **Edge Orchestration:** Node-RED ingests the JSON payload, parses the telemetry, and splits the data stream into two pathways:
    * **Local Storage:** Dispatched to a containerised Eclipse Mosquitto broker on a Synology NAS via MQTT.
-   * **Cloud Storage:** Secured and dispatched to Azure IoT Hub for enterprise cloud processing.
+   * **Cloud Storage:** Secured and dispatched to Azure IoT Hub for enterprise cloud processing. This pathway is a planned future extension.
 
+### Node-RED Flow
+
+<p align="center">
+  <img src="images/node-red-flow.jpg" alt="My Raspberry Pi" width="600"><br>
+  <em>Figure 3: The Node-RED flow.</em>
+</p>
+
+### Prerequisites / Deploy
+
+1. **Hardware:** Raspberry Pi 3A+ quite comfortably runs the rtl_433 program and Node-RED. SDR dongles differ in price but for this project a simple one is enough.
+2. **Software:** Node-RED with [node-red-contrib-rtl_433](https://github.com/dayne/node-red-contrib-rtl_433/blob/master/README.md) node. In the nodes GitHub repository there are instructions on how to install [rtl_433](https://github.com/merbanan/rtl_433).
+3. **Python helper:** `mem.py` reports memory usage for the Node-RED health dashboard. Install its dependency:
+
+```bash
+   sudo apt install python3-psutil
+```
+
+### Reliability & Security
+
+The traffic comming from rtl_433 node is filtered based on the known sensor list. Once the message is properly recognised, formatted and enriched with metadata, it is sent to the central broker with QoS of 1 which means it will get it at least once. The message is timestamped which helps with spotting potential duplicates.</br>
+</br>
+There are two template files called sensors-env.example.json and meters.example.json. They are templates for providing a list of known environmental sensors and energy monitors respectively including their locations. They should be renamed to sensors-env.json nad meters.json and contain data relevant for each deployment. Local settings and credential files like flows_cred.json have been included in .gitignore so they are not accidentally committed.
