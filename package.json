@@ -1,8 +1,16 @@
 {
-  "name": "node-red-project",
-  "description": "initially created for you by Node-RED 2.1.3 ",
-  "version": "0.0.1",
-  "private": true,
+  "name": "sdrgateway",
+  "version": "0.1.0",
+  "description": "Node-RED edge gateway for collecting 433MHz/868MHz sensors telemetry on a Raspberry Pi 3A+ and publishing enriched readings over MQTT.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkazubek/SDRGateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dkazubek/SDRGateway/issues"
+  },
+  "homepage": "https://github.com/dkazubek/SDRGateway#readme",
   "dependencies": {
     "node-red-contrib-play-audio": "^2.5.0",
     "node-red-contrib-rtl_433": "~0.1.7",
