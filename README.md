@@ -71,6 +71,10 @@ graph TD
   <em>Figure 3: The Node-RED flow.</em>
 </p>
 
+Example MQTT message sent to the central broker:
+Topic: demo-house/garden/meteo/Fineoffset-.../123
+Message payload: "{"id":123,"model":"Fineoffset-...","last_logged":"2026-09-02T16:39:59.899Z","tempc":18.7,"hum":77,"battery_ok":1,"category":"meteo","house":"demo-house","room":"garden","type":"weather_station","wind_dir_deg":251,"wind_avg_m_s":3.36,"wind_max_m_s":4.48,"rain_mm":508.2,"uv":61,"uvi":0,"light_lux":8099,"frequency":"868.000MHz"}"
+
 ### Prerequisites / Deploy
 
 1. **Hardware:** Raspberry Pi 3A+ quite comfortably runs the rtl_433 program and Node-RED. SDR dongles differ in price but for this project a simple one is enough.
