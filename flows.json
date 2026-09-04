@@ -4,39 +4,20 @@
         "type": "tab",
         "label": "SDRGateway",
         "disabled": false,
-        "info": "",
-        "env": [
-            {
-                "name": "ENV_SENSOR_CONFIG",
-                "value": "/home/pi/.node-red/sensors-env.json",
-                "type": "str"
-            },
-            {
-                "name": "METER_CONFIG",
-                "value": "/home/pi/.node-red/meters.json",
-                "type": "str"
-            }
-        ]
+        "info": ""
     },
     {
         "id": "ef898a10171d903c",
         "type": "tab",
         "label": "System",
         "disabled": false,
-        "info": "",
-        "env": [
-            {
-                "name": "MEMORY_USAGE_COMMAND",
-                "value": "python3 /home/pi/.node-red/mem.py -u",
-                "type": "str"
-            }
-        ]
+        "info": ""
     },
     {
         "id": "a538ea8f9b04237a",
         "type": "mqtt-broker",
         "name": "synology",
-        "broker": "192.168.1.187",
+        "broker": "${CENTRAL_MQTT_HOST}",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
